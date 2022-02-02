@@ -40,7 +40,6 @@ out/
 /log
 /banco
 /bin
-/gradlew
 /gradlew.bat
 /src/main/resources/email.properties
 /src/main/resources/application.properties

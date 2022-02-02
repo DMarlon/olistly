@@ -17,6 +17,7 @@ Olistly - Encurtador de URL
 ## Dependencias 
 
 [![Docker](https://img.shields.io/badge/Docker-0395bf?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Shell Script](https://img.shields.io/badge/Shell%20Script-0395bf?style=for-the-badge&logo=shell&logoColor=white)](https://pt.wikipedia.org/wiki/Shell_script/)
 
 # Execução Do Projeto
 
@@ -29,6 +30,7 @@ Olistly - Encurtador de URL
 [![SPRING](https://img.shields.io/badge/Spring-6db33f?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
 [![FLAYWAY](https://img.shields.io/badge/Flyway-cc0000?style=for-the-badge&logo=flyway&logoColor=white)](https://flywaydb.org/)
 [![AUTH0](https://img.shields.io/badge/Auth0-000000?style=for-the-badge&logo=auth0&logoColor=white)](https://auth0.com/)
+[![INSOMNIA](https://img.shields.io/badge/Insomnia-6600d8?style=for-the-badge&logo=insomnia&logoColor=white)](https://insomnia.rest/)
 
 ## 🔖 Licensa
 [![LICENSA](https://img.shields.io/badge/Custom_GPL_3.0-E58080?style=for-the-badge&logo=bookstack&logoColor=white)](/LICENSE)
