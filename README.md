@@ -82,6 +82,12 @@ Olistly - Encurtador de URL
 5. Após o build basta rodar o comando **docker-compose up**
 
 
+# Testes
+
+1. Para testar a API pode ser usado o aplicativo de requisições que mais lhe agrade.
+   * Porém tem o arquivo [api_test_insomnia.json](api_test_insomnia.json) que pode ser importado no Insomnia para facilitar os testes.
+   * Para alterar as variaveis de ambiente basta usar o atalho **ctrl+e**, onde poderá trocar o valor da URL e o Token
+
 ## Feito Com:
 [![UBUNTU](https://img.shields.io/badge/Ubuntu-e95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download)
 [![JAVA](https://img.shields.io/badge/Java-cc0000?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
