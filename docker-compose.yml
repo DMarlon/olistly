@@ -1,0 +1,44 @@
+version: '3.5'
+
+services:
+    pgadmin:
+        container_name: olistly-pgadmin
+        image: dpage/pgadmin4
+        ports:
+           - 8802:80
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=test@olistly.com.br
+            - PGADMIN_DEFAULT_PASSWORD=dev
+        networks:
+            - postgresnetwork
+
+    postgres:
+        container_name: olistly-postgres
+        image: postgres:12.5
+        ports:
+            - 8801:5432
+        environment:
+            - POSTGRES_PASSWORD=dev
+            - POSTGRES_USER=dev
+            - POSTGRES_DB=olistly
+        volumes:
+            - ./banco:/var/lib/postgresql/data
+        networks:
+            - postgresnetwork
+            
+    api:
+        container_name: olistly-api
+        image: openjdk:12
+        working_dir: /api
+        build:
+            context: .
+        ports:
+            - 8800:8080
+        volumes:
+            - "./api/:/api"
+        networks:
+            - postgresnetwork
+
+networks:
+    postgresnetwork:
+        driver: bridge

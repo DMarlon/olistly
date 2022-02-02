@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'br.com.olist'
+version = '0.0.1-OLY'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'commons-validator:commons-validator:1.7'
+	implementation 'javax.mail:mail:1.5.0-b01'
+	implementation 'com.auth0:java-jwt:3.18.2'
+	implementation 'org.flywaydb:flyway-core'
+	
+	runtimeOnly 'org.postgresql:postgresql'
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
