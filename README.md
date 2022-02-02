@@ -17,11 +17,70 @@ Olistly - Encurtador de URL
 ## Dependencias 
 
 [![Docker](https://img.shields.io/badge/Docker-0395bf?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Shell Script](https://img.shields.io/badge/Shell%20Script-0395bf?style=for-the-badge&logo=shell&logoColor=white)](https://pt.wikipedia.org/wiki/Shell_script/)
+[![Shell Script](https://img.shields.io/badge/Shell%20Script-000000?style=for-the-badge&logo=shell&logoColor=white)](https://pt.wikipedia.org/wiki/Shell_script/)
 
 # Execução Do Projeto
 
-- Para executar o projeto basta rodar o script build.sh
+1. Para iniciar as configurações rode o script [inital-configuration.sh](inital-configuration.sh)
+   * Após isso será criado a pasta **api** no raiz do seu projeto com os arquivos **application.properties**, **cryptography.properties** e **email.properties**
+2. Deve ser preenchido as informações de cada arquivo.
+3. Sugestão de preenchimento:
+   * application.properties
+   
+    ```
+	spring.datasource.url=jdbc:postgresql://postgres/olistly
+	spring.datasource.driver-class-name=org.postgresql.Driver
+	spring.datasource.username=your_secret_user
+	spring.datasource.password=your_secret_password
+	spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+	spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
+	spring.jpa.hibernate.ddl-auto=none
+
+	spring.jackson.mapper.accept_case_insensitive_enums = true 
+	spring.jackson.deserialization.read-enums-using-to-string = true
+
+	server.error.include-message=always
+	server.error.include-stacktrace=never
+
+	logging.file.name=log/cli.log
+	logging.level.web=ERROR
+	logging.level.sql=ERROR
+
+	system.name=CompanyName
+	system.homepage=https://www.companyname.com.br/
+	system.frontendurl=http://url.real-frontend.com.br
+	system.backendurl=http://url.real-backend.com.br
+	system.contact=contact@companyname.com.br
+	system.noreply=noreply@companyname.com.br
+
+	frontend.server=*ToAllowedOriginsOrFrontendUrl
+	email.type=Local
+	jwt.secret=KeyOf32bytesOr256bitssssssssssss
+    ```
+    
+   * cryptography.properties
+   
+    ```
+	crypto.salt=KeyOf32bytesOr256bitssssssssssss
+	crypto.iv=KeyOf32bytesssss
+	crypto.secret=KeyOf32bytesssss
+    ```
+    
+   * email.properties
+   
+    ```
+	user=youremail@gmail.com
+	password=your_password
+	mail.smtp.auth=true
+	mail.smtp.host=smtp.gmail.com
+	mail.smtp.port=587
+	mail.smtp.starttls.enable=true
+	mail.smtp.ssl.trust=smtp.gmail.com
+    ```
+    
+4. Agora basta rodar o script [build.sh](build.sh)
+5. Após o build basta rodar o comando **docker-compose up**
+
 
 ## Feito Com:
 [![UBUNTU](https://img.shields.io/badge/Ubuntu-e95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download)
@@ -35,12 +94,12 @@ Olistly - Encurtador de URL
 ## 🔖 Licensa
 [![LICENSA](https://img.shields.io/badge/Custom_GPL_3.0-E58080?style=for-the-badge&logo=bookstack&logoColor=white)](/LICENSE)
 
-### Support Ou Contato
+### Suporte Ou Contato
 
 [![GITHUB](https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dmarlon/)
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marlon-dauernheimer-55278073/)
 
-### Documentação de Referencia
+### Documentação de Referência
 Para referência adicional, considere as seguintes seções:
 
 * [Official Gradle documentation](https://docs.gradle.org)
