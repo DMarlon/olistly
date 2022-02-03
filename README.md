@@ -52,10 +52,13 @@ Olistly - Encurtador de URL
 	system.backendurl=http://url.real-backend.com.br
 	system.contact=contact@companyname.com.br
 	system.noreply=noreply@companyname.com.br
-
-	frontend.server=*# ToAllowedOriginsOrFrontendUrl
+	
 	email.type=Local
 	jwt.secret=KeyOf32bytesOr256bitssssssssssss
+
+	#To configuration header Access-Control-Allow-Origin
+	#WARNING Asterisc allowed all
+	frontend.server=*
     ```
     
    * cryptography.properties
