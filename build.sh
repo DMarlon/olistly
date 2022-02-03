@@ -10,7 +10,7 @@ if [ -z `command -v docker` ]; then
 	error "Docker is necessary"
 fi
 
-sudo docker-compose up -d postgres || error "Error on start docker postgres"
+docker-compose up -d postgres || error "Error on start docker postgres"
 
 echo "= Build API Olistly"
 
@@ -32,7 +32,7 @@ cp $JARFILE $WORKDIR/olistly.jar
 echo "- Copy completed"
 
 echo "= Build docker api image"
-sudo docker-compose build api || error "Error on build docker api"
+docker-compose build api || error "Error on build docker api"
 
 echo
 echo "Now just enjoy de Olistly using command 'docker-compose up'"

@@ -7,12 +7,12 @@ function error {
 
 echo "= Starting initial configuration"
 if [ -z `command -v docker` ]; then
-	error "Docker is necessery"
+	error "Docker is necessary"
 fi
 
 echo "= Build docker postgres image"
 
-sudo docker-compose build postgres || error "Error on build docker postgres"
+docker-compose build postgres || error "Error on build docker postgres"
 
 echo "= Create api folder"
 
