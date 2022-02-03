@@ -21,7 +21,7 @@ Olistly - Encurtador de URL
 
 # Execução Do Projeto
 
-1. Para iniciar as configurações rode o script [inital-configuration.sh](inital-configuration.sh)
+1. Para iniciar as configurações rode o script [initial-configuration.sh](initial-configuration.sh)
    * Após isso será criado a pasta **api** no raiz do seu projeto com os arquivos **application.properties**, **cryptography.properties** e **email.properties**
 2. Deve ser preenchido as informações de cada arquivo.
 3. Sugestão de preenchimento:
@@ -30,8 +30,8 @@ Olistly - Encurtador de URL
     ```
 	spring.datasource.url=jdbc:postgresql://postgres/olistly
 	spring.datasource.driver-class-name=org.postgresql.Driver
-	spring.datasource.username=your_secret_user
-	spring.datasource.password=your_secret_password
+	spring.datasource.username=dev
+	spring.datasource.password=dev
 	spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
 	spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
 	spring.jpa.hibernate.ddl-auto=none
@@ -53,7 +53,7 @@ Olistly - Encurtador de URL
 	system.contact=contact@companyname.com.br
 	system.noreply=noreply@companyname.com.br
 
-	frontend.server=*ToAllowedOriginsOrFrontendUrl
+	frontend.server=*# ToAllowedOriginsOrFrontendUrl
 	email.type=Local
 	jwt.secret=KeyOf32bytesOr256bitssssssssssss
     ```

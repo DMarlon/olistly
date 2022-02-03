@@ -17,6 +17,13 @@ echo "= Build API Olistly"
 JARFILE=build/libs/olistly-0.0.1-OLY.jar
 [ -f "$JARFILE" ] && rm "$JARFILE"
 
+WORKDIR=api
+PROPERTIES=src/main/resources/
+[ ! -f "$PROPERTIES"/email.properties ] && cp $WORKDIR/email.properties $PROPERTIES/email.properties
+[ ! -f "$PROPERTIES"/application.properties ] && cp $WORKDIR/application.properties $PROPERTIES/application.properties
+[ ! -f "$PROPERTIES"/cryptography.properties ] && cp $WORKDIR/cryptography.properties $PROPERTIES/cryptography.properties	
+
+
 ./gradlew build || error "Error building application."
 sudo docker-compose stop postgres
 
@@ -26,7 +33,6 @@ echo "- Build completed."
 echo
 echo "= Copying files"
 
-WORKDIR=api
 cp $JARFILE $WORKDIR/olistly.jar
 
 echo "- Copy completed"
