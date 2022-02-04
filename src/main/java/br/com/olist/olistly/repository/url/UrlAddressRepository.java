@@ -56,7 +56,7 @@ public interface UrlAddressRepository extends JpaRepository<UrlAddress, Long>, J
 	}
 
 	default String getOrder(String order) {
-		return Arrays.asList("originalUrl", "shortenedUrl").contains(order) ? order : "id";
+		return Arrays.asList("originalUrl", "shortenedUrl", "dateCreated", "views").contains(order) ? order : "id";
 	}
 
 	default Specification<UrlAddress> getFilters(Long userId, QueryParam params) {

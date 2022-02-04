@@ -49,7 +49,7 @@ public interface UrlAddressViewRepository extends JpaRepository<UrlAddressView, 
 	}
 
 	default String getOrder(String order) {
-		return Arrays.asList("originalUrl", "shortenedUrl").contains(order) ? order : "id";
+		return Arrays.asList("urlAddress", "deviceName", "remoteAddress", "dateAccess").contains(order) ? order : "id";
 	}
 
 	default Specification<UrlAddressView> getFilters(Long urlAddressId, QueryParam params) {
